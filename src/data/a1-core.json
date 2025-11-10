@@ -1,0 +1,22 @@
+[
+  { "front": "apple", "back": "elma" },
+  { "front": "water", "back": "su" },
+  { "front": "bread", "back": "ekmek" },
+  { "front": "milk", "back": "süt" },
+  { "front": "coffee", "back": "kahve" },
+  { "front": "tea", "back": "çay" },
+  { "front": "good morning", "back": "günaydın" },
+  { "front": "good night", "back": "iyi geceler" },
+  { "front": "thank you", "back": "teşekkür ederim" },
+  { "front": "please", "back": "lütfen" },
+  { "front": "how much?", "back": "ne kadar?" },
+  { "front": "where is ...?", "back": "... nerede?" },
+  { "front": "I want", "back": "istiyorum" },
+  { "front": "I need", "back": "ihtiyacım var" },
+  { "front": "help", "back": "yardım" },
+  { "front": "doctor", "back": "doktor" },
+  { "front": "bus", "back": "otobüs" },
+  { "front": "train", "back": "tren" },
+  { "front": "ticket", "back": "bilet" },
+  { "front": "station", "back": "istasyon" }
+]
