@@ -29,12 +29,11 @@ export default {
         NSMicrophoneUsageDescription: "Telaffuz alıştırmaları için mikrofon kullanılır."
       }
     },
-
-    // Bildirimler için plugin (şimdilik yerel bildirim yeterli)
+    
     plugins: ["expo-notifications"],
   android: {
   package: "com.yourname.projectnappy",
-  // bildirim kanalı için simge istersen daha sonra ekleriz
+    
           },
   ios: {
   bundleIdentifier: "com.yourname.projectnappy",
