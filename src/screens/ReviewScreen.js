@@ -1,42 +1,36 @@
-import React, { useEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useDeck } from "../store/useDeck";
-import { useSession } from "../store/useSession";
+import React, { useEffect, useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import useDeck from "../store/useDeck";
 
-export default function ReviewScreen({ navigation }) {
+export default function ReviewScreen() {
   const deck = useDeck();
-  const session = useSession();
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      if (!deck.ready) await deck.hydrate();
-      if (!deck.deck) await deck.load("a1-core");
-      if (!session.lastActiveDay) await session.hydrate();
-    })();
-  }, []);
+    const sessionCards = deck.pickSession ? deck.pickSession(5) : [];
+    setCards(sessionCards);
+  }, [deck.deck]); // deck değişince yeniden seç
 
-  const due = deck.getDueCards();
+  if (!cards.length) {
+    return (
+      <View style={styles.center}>
+        <Text>Şu an gösterilecek kart yok.</Text>
+      </View>
+    );
+  }
+
+  const first = cards[0];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Vadesi gelen kartlar</Text>
-      <Text style={styles.count}>{due.length}</Text>
-
-      <TouchableOpacity
-        style={styles.cta}
-        onPress={() => navigation.navigate("Learn")}
-        disabled={due.length === 0}
-      >
-        <Text style={styles.ctaText}>{due.length ? "Başla" : "Bugünlük bitti"}</Text>
-      </TouchableOpacity>
+    <View style={styles.center}>
+      <Text style={styles.front}>{first.front}</Text>
+      <Text style={styles.back}>{first.back}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center", gap: 12 },
-  title: { fontSize: 22, fontWeight: "700" },
-  count: { fontSize: 48, fontWeight: "900" },
-  cta: { paddingVertical: 12, paddingHorizontal: 24, backgroundColor: "#111", borderRadius: 12 },
-  ctaText: { color: "#fff", fontWeight: "700" },
+  center: { flex: 1, alignItems: "center", justifyContent: "center", padding: 24 },
+  front: { fontSize: 24, fontWeight: "700", marginBottom: 12 },
+  back: { fontSize: 20, color: "#444" },
 });

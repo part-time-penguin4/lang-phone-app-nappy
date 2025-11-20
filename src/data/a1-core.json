@@ -1,22 +1,107 @@
-[
-  { "front": "apple", "back": "elma" },
-  { "front": "water", "back": "su" },
-  { "front": "bread", "back": "ekmek" },
-  { "front": "milk", "back": "süt" },
-  { "front": "coffee", "back": "kahve" },
-  { "front": "tea", "back": "çay" },
-  { "front": "good morning", "back": "günaydın" },
-  { "front": "good night", "back": "iyi geceler" },
-  { "front": "thank you", "back": "teşekkür ederim" },
-  { "front": "please", "back": "lütfen" },
-  { "front": "how much?", "back": "ne kadar?" },
-  { "front": "where is ...?", "back": "... nerede?" },
-  { "front": "I want", "back": "istiyorum" },
-  { "front": "I need", "back": "ihtiyacım var" },
-  { "front": "help", "back": "yardım" },
-  { "front": "doctor", "back": "doktor" },
-  { "front": "bus", "back": "otobüs" },
-  { "front": "train", "back": "tren" },
-  { "front": "ticket", "back": "bilet" },
-  { "front": "station", "back": "istasyon" }
-]
+{
+  "id": "a1-core",
+  "langFrom": "en",
+  "langTo": "tr",
+  "cards": [
+    {
+      "id": "a1-hello",
+      "front": "Hello",
+      "back": "Merhaba"
+    },
+    {
+      "id": "a1-how-are-you",
+      "front": "How are you?",
+      "back": "Nasılsın?"
+    },
+    {
+      "id": "a1-im-fine",
+      "front": "I’m fine, thanks.",
+      "back": "İyiyim, teşekkürler."
+    },
+    {
+      "id": "a1-whats-your-name",
+      "front": "What’s your name?",
+      "back": "Adın ne?"
+    },
+    {
+      "id": "a1-my-name-is",
+      "front": "My name is Alex.",
+      "back": "Benim adım Alex."
+    },
+    {
+      "id": "a1-where-are-you-from",
+      "front": "Where are you from?",
+      "back": "Nerelisin?"
+    },
+    {
+      "id": "a1-im-from-turkey",
+      "front": "I’m from Turkey.",
+      "back": "Türkiye’denim."
+    },
+    {
+      "id": "a1-nice-to-meet-you",
+      "front": "Nice to meet you.",
+      "back": "Tanıştığımıza memnun oldum."
+    },
+    {
+      "id": "a1-see-you-later",
+      "front": "See you later.",
+      "back": "Sonra görüşürüz."
+    },
+    {
+      "id": "a1-good-morning",
+      "front": "Good morning.",
+      "back": "Günaydın."
+    },
+    {
+      "id": "a1-good-night",
+      "front": "Good night.",
+      "back": "İyi geceler."
+    },
+    {
+      "id": "a1-please",
+      "front": "Please.",
+      "back": "Lütfen."
+    },
+    {
+      "id": "a1-thank-you",
+      "front": "Thank you.",
+      "back": "Teşekkür ederim."
+    },
+    {
+      "id": "a1-youre-welcome",
+      "front": "You’re welcome.",
+      "back": "Rica ederim."
+    },
+    {
+      "id": "a1-excuse-me",
+      "front": "Excuse me.",
+      "back": "Afedersiniz."
+    },
+    {
+      "id": "a1-sorry",
+      "front": "Sorry.",
+      "back": "Üzgünüm."
+    },
+    {
+      "id": "a1-yes",
+      "front": "Yes.",
+      "back": "Evet."
+    },
+    {
+      "id": "a1-no",
+      "front": "No.",
+      "back": "Hayır."
+    },
+    {
+      "id": "a1-i-dont-understand",
+      "front": "I don’t understand.",
+      "back": "Anlamıyorum."
+    },
+    {
+      "id": "a1-can-you-repeat",
+      "front": "Can you repeat, please?",
+      "back": "Tekrar eder misin lütfen?"
+    }
+  ]
+}

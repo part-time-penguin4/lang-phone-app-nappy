@@ -7,8 +7,8 @@ function todayKey(d = new Date()) {
   return d.toISOString().slice(0, 10);
 }
 
-export const useSession = create((set, get) => ({
-  goalPerDay: 30,          // XP hedefi (örnek)
+const useSession = create((set, get) => ({
+  goalPerDay: 30,
   xp: 0,
   streak: 0,
   lastActiveDay: null,
@@ -30,29 +30,28 @@ export const useSession = create((set, get) => ({
   },
 
   async submitAnswer({ quality }) {
-    const xpGain = quality === "easy" ? 5 : quality === "good" ? 4 : quality === "hard" ? 3 : 1;
+    const xpGain =
+      quality === "easy" ? 5 :
+      quality === "good" ? 4 :
+      quality === "hard" ? 3 : 1;
+
     const nextXp = get().xp + xpGain;
 
-    // streak güncelle
     const tKey = todayKey();
-    const last = get().lastActiveDay;
-    let streak = get().streak;
-    if (last !== tKey) {
-      // yeni gün: artış (dünse +1, değilse sıfırdan)
-      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-      streak = last === yesterday ? streak + 1 : 1;
+    const prevDay = get().lastActiveDay;
+    let streak = get().streak || 0;
+
+    if (!prevDay || prevDay !== tKey) {
+      streak = prevDay ? streak + 1 : 1;
     }
 
-    set({
-      xp: nextXp,
-      lastActiveDay: tKey,
-      streak,
-      currentIndex: get().currentIndex + 1,
-    });
+    set({ xp: nextXp, streak, lastActiveDay: tKey });
     await get().persist();
   },
 
   endSession() {
-    set({ inSession: false, currentSet: [], currentIndex: 0 });
+    set({ inSession: false, currentIndex: 0, currentSet: [] });
   },
 }));
+
+export default useSession;
