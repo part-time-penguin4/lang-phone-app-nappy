@@ -45,7 +45,7 @@ const useSession = create((set, get) => ({
       streak = prevDay ? streak + 1 : 1;
     }
 
-    set({ xp: nextXp, streak, lastActiveDay: tKey });
+    set({ xp: nextXp, streak, lastActiveDay: tKey, currentIndex: get().currentIndex + 1 });
     await get().persist();
   },
 
